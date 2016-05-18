@@ -1,25 +1,80 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TareaCurso3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buscador de libros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2al-3k-hWS">
+                                <rect key="frame" x="85" y="20" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="978-84-376-0494-7" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-sz-KjC">
+                                <rect key="frame" x="35" y="66" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceb-Gd-Guw">
+                                <rect key="frame" x="80" y="129" width="48" height="30"/>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="buscarLibro:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ie6-4u-PwL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAF-rW-XSa">
+                                <rect key="frame" x="184" y="129" width="51" height="30"/>
+                                <state key="normal" title="Limpiar"/>
+                                <connections>
+                                    <action selector="limpiarBusqueda:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9mT-Nf-uqR"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="0" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oa-gy-Hx9">
+                                <rect key="frame" x="35" y="191" width="244" height="304"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dAZ-sz-KjC" firstAttribute="centerX" secondItem="2al-3k-hWS" secondAttribute="centerX" id="9zK-R0-DAf"/>
+                            <constraint firstItem="dAZ-sz-KjC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="JJp-Sg-Upz"/>
+                            <constraint firstItem="dAZ-sz-KjC" firstAttribute="top" secondItem="2al-3k-hWS" secondAttribute="bottom" constant="25" id="O3r-gq-M3d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Oa-gy-Hx9" secondAttribute="trailing" constant="25" id="Oby-U9-jjv"/>
+                            <constraint firstItem="OAF-rW-XSa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="109" id="Qjv-Mc-eWq"/>
+                            <constraint firstItem="3Oa-gy-Hx9" firstAttribute="top" secondItem="OAF-rW-XSa" secondAttribute="bottom" constant="32" id="R72-80-1TW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OAF-rW-XSa" secondAttribute="trailing" constant="69" id="TfD-8i-shO"/>
+                            <constraint firstItem="2al-3k-hWS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bhN-W1-wlI"/>
+                            <constraint firstItem="ceb-Gd-Guw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="gOd-fu-hfL"/>
+                            <constraint firstItem="2al-3k-hWS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="69" id="iZl-37-rTe"/>
+                            <constraint firstItem="ceb-Gd-Guw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="109" id="kTy-d4-3lk"/>
+                            <constraint firstItem="3Oa-gy-Hx9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="59" id="kWT-GP-kcj"/>
+                            <constraint firstItem="3Oa-gy-Hx9" firstAttribute="leading" secondItem="dAZ-sz-KjC" secondAttribute="leading" id="mDc-d2-8Ax"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buscador" destination="dAZ-sz-KjC" id="EfU-W0-Af6"/>
+                        <outlet property="contenido" destination="3Oa-gy-Hx9" id="Iw2-bs-i1F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130" y="288"/>
         </scene>
     </scenes>
 </document>
